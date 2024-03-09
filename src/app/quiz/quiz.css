@@ -1,0 +1,30 @@
+.container {
+  border: 2px solid;
+  height: 90vh;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Quiz-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  width: 60%;
+}
+.Quiz-box h2 {
+  padding: 10px;
+}
+.row {
+  padding: 15px;
+}
+.btn {
+  margin: 2px;
+  padding: 10px 5px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 25px;
+}

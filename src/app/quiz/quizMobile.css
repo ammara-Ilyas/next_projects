@@ -1,0 +1,16 @@
+@media screen and (max-width: 900px) {
+  .container {
+    background-color: rgb(168, 168, 226);
+  }
+}
+@media screen and (max-width: 450px) {
+  .container {
+    height: 100vh;
+    background-color: rgb(241, 200, 139);
+  }
+}
+@media screen and (max-width: 350px) {
+  .container {
+    align-items: start;
+  }
+}
