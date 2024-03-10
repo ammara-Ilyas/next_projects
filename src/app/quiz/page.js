@@ -26,6 +26,7 @@ export default function page() {
   const CheckAnswer = (ans) => {
     if (ans === data[index].correct) {
       console.log("Correct!");
+      setScore((preScore) => preScore + 1);
     } else {
       console.log("Incorrect!");
     }
