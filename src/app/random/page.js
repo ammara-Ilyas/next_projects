@@ -76,7 +76,7 @@ export default function page() {
   };
   return (
     <div>
-      <div className="container">
+      <div className="container_ran">
         <div className="heading">
           <h1>Number Guessing Game</h1>
           <p>Guess the number between 1 and 100</p>

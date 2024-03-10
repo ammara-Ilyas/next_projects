@@ -14,8 +14,8 @@ export default function imageSearch() {
     };
   });
   return (
-    <div className="container">
-      <div className="box">
+    <div className="container_img">
+      <div className="box_img">
         <h2>AI Image Generator</h2>
         <div className="search-input">
           <input type="text" className="input" />

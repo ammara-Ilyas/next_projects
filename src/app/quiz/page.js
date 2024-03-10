@@ -34,7 +34,7 @@ export default function page() {
   };
 
   return (
-    <div className="container">
+    <div className="container_quiz">
       {Question ? (
         <div className="quiz-box ">
           <h2 className="question">{question}</h2>

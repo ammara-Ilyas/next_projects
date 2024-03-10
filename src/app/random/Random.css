@@ -1,11 +1,11 @@
-.container {
+.container_ran {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(34, 32, 32, 0.9);
   color: white;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
 }
 .heading {
