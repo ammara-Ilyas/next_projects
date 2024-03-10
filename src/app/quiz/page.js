@@ -5,56 +5,59 @@ import data from "./data.js";
 import { useState } from "react";
 export default function page() {
   const [index, setIndex] = useState(0);
+  const [clickOption, setClickOption] = useState(true);
+  const [score, setScore] = useState(0);
+  const [Question, setQuestion] = useState(true);
+
+  let { question, answer } = data[index];
+
+  const nextPreviousClick = (x) => {
+    console.log(index);
+    if (index + x >= 0 && index + x < data.length) {
+      setIndex((prevIndex) => prevIndex + x);
+      console.log("neg");
+    } else if (index + x >= data.length) {
+      return setQuestion(false);
+    } else {
+      return setIndex(0);
+    }
+    return setClickOption(true);
+  };
+  const CheckAnswer = (ans) => {
+    if (ans === data[index].correct) {
+      console.log("Correct!");
+    } else {
+      console.log("Incorrect!");
+    }
+    return setClickOption(false);
+  };
 
   return (
     <div className="container">
-      <div className="Quiz-box">
-        <h2 className="Question">1 This is first Question.</h2>
-        <div className="row">
-          <button>Option 1</button>
-          {/* <input
-            type="radio"
-            name="Option"
-            class="answer"
-            className="option1"
-          /> */}
-          <label for="option1">Option No 1</label>
+      {Question ? (
+        <div className="quiz-box ">
+          <h2 className="question">{question}</h2>
+          {answer.map((ans, i) => (
+            <div className="row" key={i}>
+              <button
+                className="button"
+                onClick={clickOption ? () => CheckAnswer(ans) : undefined}
+              >
+                {ans}
+              </button>
+            </div>
+          ))}
+          <div className="next">
+            <button className="btn" onClick={() => nextPreviousClick(+1)}>
+              Next
+            </button>
+          </div>
         </div>
-        <div className="row">
-          <input
-            type="radio"
-            name="Option"
-            class="answer"
-            className="option2"
-          />
-          <label for="option2">Option No 1</label>
+      ) : (
+        <div className="quiz-box scorePage" style={{ height: "60%" }}>
+          <h1>Your score are {score}</h1>
         </div>
-        <div className="row">
-          <input
-            type="radio"
-            name="Option"
-            class="answer"
-            className="option3"
-          />
-          <label for="option3">Option No 1</label>
-        </div>
-        <div className="row">
-          <input
-            type="radio"
-            name="Option"
-            class="answer"
-            className="option4"
-          />
-          <label for="option4">Option No 1</label>
-        </div>
-        <button className="btn" onclick="nextPreviousClick(+1)">
-          Next
-        </button>
-        <button className="btn">Submit</button>
-        <button className="btn" onclick="nextPreviousClick(-1)">
-          Previous
-        </button>
-      </div>
+      )}
     </div>
   );
 }

@@ -33,32 +33,40 @@ export default function page() {
       setGamePlay(false);
     }
   };
-  const checkNum = () => {
-    if (guess === "") {
-      alert("Write the Number");
-      setNumber(false);
-      return setMessage("");
-    } else {
-      if (guess > 100) {
-        setNumber(false);
-        return setMessage("The number should be smaller than 100");
-      } else if (guess < 0) {
-        setNumber(false);
-        return setMessage("The number should be greater than zero");
-      } else {
-        setNumber(true);
-      }
-    }
-    setGuess("");
-  };
+  // const checkNum = () => {
+  //   if (guess === "") {
+  //     alert("Write the Number");
+  //     return setMessage("");
+  //   } else {
+  //     if (guess > 100) {
+  //       return setMessage("The number should be smaller than 100");
+  //     } else if (guess < 0) {
+  //       return setMessage("The number should be greater than zero");
+  //     } else {
+  //       setGuessingArray((preArr) => [guess, ...preArr]);
+  //       console.log(guessingArray);
+  //       setAttempts(attempts - 1);
+  //     }
+  //   }
+  //   setGuess("");
+  // };
 
   const submitGuessNo = (e) => {
     e.preventDefault();
-    checkNum();
-    if (number) {
-      setGuessingArray((preArr) => [guess, ...preArr]);
-      console.log(guessingArray);
-      setAttempts(attempts - 1);
+    // checkNum();
+    if (guess === "") {
+      alert("Write the Number");
+      return setMessage("");
+    } else {
+      if (guess > 100) {
+        return setMessage("The number should be smaller than 100");
+      } else if (guess < 0) {
+        return setMessage("The number should be greater than zero");
+      } else {
+        setGuessingArray((preArr) => [guess, ...preArr]);
+        console.log(guessingArray);
+        setAttempts(attempts - 1);
+      }
     }
     console.log(guess);
     setGuess("");
