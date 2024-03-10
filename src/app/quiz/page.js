@@ -24,7 +24,7 @@ export default function page() {
     return setClickOption(true);
   };
   const CheckAnswer = (ans) => {
-    if (ans === data[index].correct) {
+    if (ans.trim() === data[index].correct.trim()) {
       console.log("Correct!");
       setScore((preScore) => preScore + 1);
     } else {

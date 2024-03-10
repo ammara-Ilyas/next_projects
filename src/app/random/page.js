@@ -9,7 +9,6 @@ export default function page() {
   const [guessNo, setGuessNo] = useState(Math.floor(Math.random() * 100));
   const [message, setMessage] = useState("");
   const [gamePlay, setGamePlay] = useState(true);
-  const [number, setNumber] = useState();
 
   const startGame = () => {
     setGamePlay(true);
@@ -34,47 +33,30 @@ export default function page() {
     }
   };
   const checkNum = () => {
-    if (guess === "") {
-      alert("Write the Number");
-      return setMessage("");
-      setNumber(false);
+    const parsedGuess = parseInt(guess);
+    if (isNaN(parsedGuess)) {
+      alert("Please enter a valid number.");
+      setMessage("");
     } else {
-      if (guess > 100) {
-        setNumber(false);
+      if (parsedGuess > 100) {
         return setMessage("The number should be smaller than 100");
-      } else if (guess < 0) {
-        setNumber(false);
+      } else if (parsedGuess < 0) {
         return setMessage("The number should be greater than zero");
       } else {
-        setNumber(true);
+        setGuessingArray((preArr) => [parsedGuess, ...preArr]);
+        console.log(guessingArray);
+        setAttempts(attempts - 1);
       }
     }
+    console.log(typeof parsedGuess);
     setGuess("");
   };
 
   const submitGuessNo = (e) => {
     e.preventDefault();
     checkNum();
-    // if (guess === "") {
-    //   alert("Write the Number");
-    //   return setMessage("");
-    // } else {
-    //   if (guess > 100) {
-    //     return setMessage("The number should be smaller than 100");
-    //   } else if (guess < 0) {
-    //     return setMessage("The number should be greater than zero");
-    //   } else {
-    //     setGuessingArray((preArr) => [guess, ...preArr]);
-    //     console.log(guessingArray);
-    //     setAttempts(attempts - 1);
-    //   }
-    // }
-    if (number) {
-      setGuessingArray((preArr) => [guess, ...preArr]);
-      console.log(guessingArray);
-      setAttempts(attempts - 1);
-    }
-    console.log(guess);
+
+    console.log(typeof guess);
     setGuess("");
     checkingGuessNo();
     checkAttempt();
