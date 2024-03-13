@@ -30,10 +30,12 @@
   border: none;
   margin: 8px 0;
 }
-.btn {
+.bttn {
   padding: 10px;
   border-radius: 25px;
   margin: 10px;
+  border: none;
+  box-shadow: 2px 2px 5px rgb(83, 83, 83);
 }
 .result {
   margin: 10px;

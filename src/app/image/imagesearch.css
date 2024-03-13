@@ -1,13 +1,11 @@
-.container_img {
+.img-con {
   background-color: rgb(245, 248, 247);
   text-align: center;
-  height: 100vh;
+  border: 2px solid saddlebrown;
 }
 .box_img {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 .box_img h2 {
   margin-top: 10px;
@@ -51,7 +49,7 @@
 .grid-item img {
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: 260px;
   transition: all 0.2s ease-in-out;
 }
 .grid-item img:hover {

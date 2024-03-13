@@ -8,6 +8,8 @@ export default function page() {
   const [clickOption, setClickOption] = useState(true);
   const [score, setScore] = useState(0);
   const [Question, setQuestion] = useState(true);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isFlag, setIsFlag] = useState(null);
 
   let { question, answer } = data[index];
 
@@ -27,10 +29,13 @@ export default function page() {
     if (ans.trim() === data[index].correct.trim()) {
       console.log("Correct!");
       setScore((preScore) => preScore + 1);
+      setIsFlag(true);
     } else {
       console.log("Incorrect!");
+      setIsFlag(false);
     }
-    return setClickOption(false);
+    setSelectedAnswer(ans);
+    setClickOption(false);
   };
 
   return (
@@ -43,6 +48,14 @@ export default function page() {
               <button
                 className="button"
                 onClick={clickOption ? () => CheckAnswer(ans) : undefined}
+                style={
+                  selectedAnswer === ans
+                    ? {
+                        backgroundColor: isFlag ? "green" : "red",
+                        color: isFlag ? "white" : "white",
+                      }
+                    : {}
+                }
               >
                 {ans}
               </button>

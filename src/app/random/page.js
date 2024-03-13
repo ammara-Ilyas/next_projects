@@ -78,7 +78,7 @@ export default function page() {
             value={guess}
             onChange={gamePlay ? (e) => setGuess(e.target.value) : undefined}
           />
-          <input type="submit" className="btn" />
+          <input type="submit" className="bttn" />
         </form>
         <div className="result">
           <p>
