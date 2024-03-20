@@ -69,7 +69,9 @@ export default function page() {
         </div>
       ) : (
         <div className="quiz-box scorePage" style={{ height: "60%" }}>
-          <h1>Your score are {score}</h1>
+          <h1>
+            Your score are {score} / {data.length}
+          </h1>
         </div>
       )}
     </div>

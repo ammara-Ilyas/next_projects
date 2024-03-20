@@ -35,7 +35,7 @@ let data = [
   },
   {
     question:
-      "4)How can you check if a variable is an array in JavaScript?    ",
+      "4) How can you check if a variable is an array in JavaScript?    ",
     answer: [
       " Using isArray(variable)",
       "variable.isArray()",
@@ -43,6 +43,47 @@ let data = [
       " typeof variable === 'array'",
     ],
     correct: "typeof variable === 'array'",
+  },
+  {
+    question: "5) What is React.js primarily used for?    ",
+    answer: [
+      "Backend development",
+      " Frontend development",
+      "  Mobile app development",
+      " Database management",
+    ],
+    correct: "Frontend development",
+  },
+  {
+    question: "6) What does JSX stand for in React.js?   ",
+    answer: [
+      "JavaScript XML",
+      " JavaScript Extension",
+      " JavaScript XHR",
+      " JavaScript Syntax",
+    ],
+    correct: "Frontend development",
+  },
+  {
+    question: "7) What is the virtual DOM in React.js?    ",
+    answer: [
+      "The browser's representation of the actual DOM",
+      "  A lightweight version of the actual DOM",
+      "  A concept used to optimize rendering performance",
+      " A server-side representation of the DOM",
+    ],
+    correct: " A concept used to optimize rendering performance",
+  },
+  {
+    question:
+      "8)In React.js, which hook is used to perform side effects in function components?",
+    answer: [
+      " useState()", // Invalid JavaScript syntax
+      " useEffect()",
+      " useMemo()",
+      "  useCallback()", // Invalid JavaScript syntax
+    ],
+    correct: "useEffect()",
   },
 ];
 

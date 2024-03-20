@@ -9,7 +9,7 @@ export default function page() {
   const [guessNo, setGuessNo] = useState(Math.floor(Math.random() * 100));
   const [message, setMessage] = useState("");
   const [gamePlay, setGamePlay] = useState(true);
-
+  console.log(guessNo);
   const startGame = () => {
     setGamePlay(true);
     setAttempts(10);
@@ -35,12 +35,14 @@ export default function page() {
   const checkNum = () => {
     const parsedGuess = parseInt(guess);
     if (isNaN(parsedGuess)) {
-      alert("Please enter a valid number.");
+      alert("Please enter a valid number between 1 and 100.");
       setMessage("");
     } else {
       if (parsedGuess > 100) {
+        alert("The number should be smaller than 100");
         return setMessage("The number should be smaller than 100");
       } else if (parsedGuess < 0) {
+        alert("The number should be greater than zero");
         return setMessage("The number should be greater than zero");
       } else {
         setGuessingArray((preArr) => [parsedGuess, ...preArr]);
